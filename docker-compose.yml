@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  crud:
+    build: ./crud
+    depends_on:
+      - crud-database
+    ports: 
+      - 3000:3000
+    volumes:
+      - ./crud:/app
+    restart: on-failure
+    networks:
+      - tme4-network
+
+  crud-database:
+    build: ./crud-database
+    restart: unless-stopped
+    networks:
+      - tme4-network
+
+networks:
+  tme4-network:
+    driver: bridge
