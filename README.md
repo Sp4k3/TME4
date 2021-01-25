@@ -18,6 +18,12 @@ Clone this project :
 git clone https://github.com/tobi-colin/TME4.git
 ```
 
+Install dependancies :
+
+```sh
+cd crud && npm install && cd ..
+```
+
 Run the project inside Docker :
 
 ```sh
